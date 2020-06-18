@@ -3,3 +3,14 @@ server:
 spring:
   application:
     name: edge-service
+
+#zuul:
+ # routes:
+  #  301javamicro:
+   #   path: /employees
+    #  url: http://localhost:8080/employees
+    #home:
+     # path: /
+      #url: http://localhost:8080
+  #sensitive-headers: Cookie,Set-Cookie
+
