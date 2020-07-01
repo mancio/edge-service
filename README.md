@@ -29,6 +29,11 @@ example ```docker build -t edge:0.1 .```
 to execute a container in local type ```docker run -p 8081:8081 ImageName:TagName```
 example ```docker run -p 8081:8081 edge:0.1```
 
+### Okta credentials for testing
+user: sibipo7648@wwmails.com
+pass: WWuhoiuh8$
+okta domain: dev-912784.okta.com
+
 
 ### Links
 * [How to build microservices](https://developer.okta.com/blog/2017/06/15/build-microservices-architecture-spring-boot)

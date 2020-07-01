@@ -21,13 +21,13 @@ zuul:
 security:
   oauth2:
     client:
-      access-token-uri: https://dev-475527.okta.com/oauth2/default/v1/token
-      client-id: '0oafs6ruloU1q3amy4x6'
-      client-secret: '7OgRNRZJLCOsaTAYx2Q0PJ8fZrPI_6kDg2uhuIly'
+      access-token-uri: https://dev-912784.okta.com/oauth2/default/v1/token
+      client-id: '0oaibgrorRm5bxLZD4x6'
+      client-secret: 'sSjWC_KKTCP3kRBHJUdlWGMWA08MkvvjDWEU9S7T'
       scope: openid profile email
-      user-authorization-uri: https://dev-475527.okta.com/oauth2/default/v1/authorize
+      user-authorization-uri: https://dev-912784.okta.com/oauth2/default/v1/authorize
     resource:
-      user-info-uri: https://dev-475527.okta.com/oauth2/default/v1/userinfo
+      user-info-uri: https://dev-912784.okta.com/oauth2/default/v1/userinfo
 
 feign:
   hystrix:
