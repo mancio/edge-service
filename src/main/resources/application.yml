@@ -10,8 +10,8 @@ spring:
 zuul:
   routes:
     301javamicro:
-      path: /employees
-      url: http://localhost:8080
+      path: /employees/**
+      url: http://localhost:8080/employees
     home:
       path: /
       url: http://localhost:8080
