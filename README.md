@@ -39,7 +39,7 @@ Okta do not show the authentication webpage if the request is sent by
 Postman.
 
 To access Swagger web interface go to 
-[https://localhost:8081/swagger-ui.html](https://localhost:8081/swagger-ui.html)
+[http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html)
 
 ### Jar executable file
 You can build a full working .jar by using the ```packege``` comand of maven.
