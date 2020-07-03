@@ -9,6 +9,10 @@ The edge service is a Microservice able to authenticate the user by using [okta]
 it authenticate to the core microservice [301javamicro](https://github.com/mancio/301JavaMicro_part2)
 * [MyEurekaService](https://github.com/mancio/MyEurekaService) is the service discovery able to track the status of both the services.
 
+### Project Slides
+
+You can find the project presentation slides [here]()
+
 ### Jar executable file
 You can build a full working .jar by using the ```packege``` comand of maven.
 This jar include all the springboot classes and tomcat. It is ready to use.
