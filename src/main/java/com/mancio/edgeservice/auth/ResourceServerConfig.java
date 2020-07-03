@@ -24,7 +24,9 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .requestMatcher(new RequestHeaderRequestMatcher("Authorization"))
                 .authorizeRequests()
                 .antMatchers("/**").authenticated();
+
     }
+
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
@@ -42,5 +44,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+
+
 
 }
