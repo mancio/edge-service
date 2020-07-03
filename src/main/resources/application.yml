@@ -8,14 +8,20 @@ spring:
 
 
 zuul:
+
   routes:
+    employees-service: /employees/**
     301javamicro:
-      path: /employees
-      url: http://localhost:8080
+      path: /employees/**
+      url: http://localhost:8080/employees
     home:
       path: /
       url: http://localhost:8080
   sensitive-headers: Cookie,Set-Cookie
+
+
+
+
 
 
 security:

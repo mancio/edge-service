@@ -9,9 +9,37 @@ The edge service is a Microservice able to authenticate the user by using [okta]
 it authenticate to the core microservice [301javamicro](https://github.com/mancio/301JavaMicro_part2)
 * [MyEurekaService](https://github.com/mancio/MyEurekaService) is the service discovery able to track the status of both the services.
 
-### Project Slides
+### Endpoints
+GET
+```http://localhost:8080/employees/``` get all the employees
+```http://localhost:8080/employees/{id}``` get the employee with id = {id} 
+(employees 0 and 1 for testing already in the database)
 
-You can find the project presentation slides [here]()
+POST
+```http://localhost:8081/employees``` post a new employee
+
+POST BODY
+
+    {
+        "employee_name": "Bill",
+        "employee_last_name": "Spencer",
+        "employee_address": "st. avenue 7 77-000 Chicago USA",
+        "employee_phone": "+48788798908",
+        "job_position": "java dev",
+        "salary": 2500,
+        "currency": "EUR"
+    }
+
+DELETE
+```http://localhost:8080/employees/{id}``` delete the employee with id = {id} 
+
+### Swagger UI
+To test the endpoints Swagger is much better than Postman because
+Okta do not show the authentication webpage if the request is sent by
+Postman.
+
+To access Swagger web interface go to 
+[http://localhost:8081/swagger-ui.html](http://localhost:8081/swagger-ui.html)
 
 ### Jar executable file
 You can build a full working .jar by using the ```packege``` comand of maven.
@@ -37,6 +65,8 @@ example ```docker run -p 8081:8081 edge:0.1```
 user: sibipo7648@wwmails.com
 pass: WWuhoiuh8$
 okta domain: dev-912784.okta.com
+
+
 
 
 ### Links
