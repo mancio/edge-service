@@ -20,10 +20,6 @@ zuul:
   sensitive-headers: Cookie,Set-Cookie
 
 
-
-
-
-
 security:
   oauth2:
     client:
