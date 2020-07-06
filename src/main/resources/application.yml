@@ -1,10 +1,13 @@
 server:
   port: 8081
+
 spring:
   application:
     name: edge-service
   main:
     allow-bean-definition-overriding: true
+
+
 
 
 zuul:
@@ -20,16 +23,24 @@ zuul:
   sensitive-headers: Cookie,Set-Cookie
 
 
-security:
-  oauth2:
-    client:
-      access-token-uri: https://dev-912784.okta.com/oauth2/default/v1/token
-      client-id: '0oaibgrorRm5bxLZD4x6'
-      client-secret: 'sSjWC_KKTCP3kRBHJUdlWGMWA08MkvvjDWEU9S7T'
-      scope: openid profile email
-      user-authorization-uri: https://dev-912784.okta.com/oauth2/default/v1/authorize
-    resource:
-      user-info-uri: https://dev-912784.okta.com/oauth2/default/v1/userinfo
+#security:
+#  oauth2:
+#    client:
+#      access-token-uri: https://dev-912784.okta.com/oauth2/default/v1/token
+#      client-id: '0oaibgrorRm5bxLZD4x6'
+#      client-secret: 'sSjWC_KKTCP3kRBHJUdlWGMWA08MkvvjDWEU9S7T'
+#      scope: openid profile email
+#      user-authorization-uri: https://dev-912784.okta.com/oauth2/default/v1/authorize
+#    resource:
+#      user-info-uri: https://dev-912784.okta.com/oauth2/default/v1/userinfo
+
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: Iv1.31d3980af5014e2a
+            clientSecret: 85c41b20778f181a84a6729cec8dcded74db7766
 
 feign:
   hystrix:

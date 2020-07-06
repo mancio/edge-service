@@ -1,6 +1,5 @@
 package com.mancio.edgeservice.swagger;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.PathSelectors;
@@ -22,8 +21,8 @@ public class SpringFoxConfig {
     private static final String CLIENT_ID = "spring-security-oauth2-read-write-client";
     private static final String CLIENT_SECRET = "spring-security-oauth2-read-write-client-password1234";
 
-    @Value("${security.oauth2.client.user-authorization-uri}")
-    private String oauthtoken;
+    //@Value("${security.oauth2.client.user-authorization-uri}")
+    //private String oauthtoken;
 
     @Bean
     public Docket api() {
