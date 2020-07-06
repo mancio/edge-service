@@ -10,13 +10,16 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+
+@SpringBootApplication
+@EnableSwagger2
 @EnableFeignClients
 @EnableCircuitBreaker
 @EnableDiscoveryClient
 @EnableZuulProxy
 @EnableOAuth2Sso
-@SpringBootApplication
 public class EdgeServiceApplication {
 
 	public static void main(String[] args) {

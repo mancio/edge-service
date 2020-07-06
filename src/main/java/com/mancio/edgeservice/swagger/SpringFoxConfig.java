@@ -9,13 +9,13 @@ import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
-import springfox.documentation.swagger2.annotations.EnableSwagger2WebMvc;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Collections;
 
 
 @Configuration
-@EnableSwagger2WebMvc
+@EnableSwagger2
 public class SpringFoxConfig {
 
     private static final String SECURITY_SCHEME_NAME = "spring_oauth";
@@ -30,8 +30,9 @@ public class SpringFoxConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.mancio.edgeservice"))
-                .paths(PathSelectors.ant("/**"))
+                .paths(PathSelectors.any())
                 .build()
+                // enable to authenticate manually on Swagger UI
                 //.securitySchemes(Arrays.asList(securityScheme()))
                 //.securityContexts(Arrays.asList(securityContext()))
                 .apiInfo(apiInfo());
@@ -48,8 +49,8 @@ public class SpringFoxConfig {
                 " ", " ", Collections.emptyList());
     }
 
-    /*
-    @Bean
+
+    /*@Bean
     public SecurityConfiguration securityInfo() {
         return SecurityConfigurationBuilder.builder()
                 .clientId(CLIENT_ID)
@@ -91,4 +92,6 @@ public class SpringFoxConfig {
                 .securityReferences(securityReferences())
                 .build();
     }*/
+
+
 }
