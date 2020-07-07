@@ -1,18 +1,52 @@
 package com.mancio.edgeservice.auth;
 
-import com.google.common.collect.ImmutableList;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
-import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
-import org.springframework.security.web.util.matcher.RequestHeaderRequestMatcher;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
-import java.util.Arrays;
 
+@Configuration
+public class ResourceServerConfig extends WebSecurityConfigurerAdapter {
+
+    // ...
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        // @formatter:off
+        http
+                .authorizeRequests(a -> a
+                        .antMatchers("/", "/error", "/webjars/**", "/api/user/anonymous/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .exceptionHandling(e -> e
+                        .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+                )
+                .logout(l -> l
+                        .logoutSuccessUrl("/").permitAll()
+                )
+                .csrf().disable()
+                .oauth2Login();
+/*        http
+                .authorizeRequests(a -> a
+                        .antMatchers("/", "/login**","/callback/", "/error**",
+                                "/v2/api-docs",
+                                "/swagger-resources/**",
+                                //"/swagger-ui.html",
+                                "/webjars/**" ,
+                                "/swagger.json")
+                        .permitAll()
+                        .anyRequest().authenticated()
+                )
+                .exceptionHandling(e -> e
+                        .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+                )
+                .oauth2Login();*/
+        // @formatter:on
+    }
+
+/*
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
@@ -30,7 +64,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                         "/swagger-resources/**",
                         "/swagger-ui.html",
                         "/webjars/**" ,
-                        /*Probably not needed*/ "/swagger.json")
+                         "/swagger.json")
                 .permitAll()
                 .anyRequest().authenticated();
 
@@ -52,7 +86,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
-    }
+    }*/
 
 
 

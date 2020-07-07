@@ -1,4 +1,4 @@
-package com.mancio.edgeservice.customExceptions;
+/*package com.mancio.edgeservice.customExceptions;
 
 
 import org.springframework.http.HttpStatus;
@@ -9,4 +9,4 @@ public class CustomNotFound extends RuntimeException {
     public CustomNotFound(Long id){
         super("Employee id: " + id + " - not found");
     }
-}
+}*/

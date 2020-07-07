@@ -1,4 +1,4 @@
-package com.mancio.edgeservice.dto;
+/*package com.mancio.edgeservice.dto;
 
 import lombok.Data;
 
@@ -12,4 +12,4 @@ public class EmployeesDto {
     private String job_position;
     private int salary;
     private String currency;
-}
+}*/

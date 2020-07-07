@@ -1,4 +1,4 @@
-package com.mancio.edgeservice.auth;
+/*package com.mancio.edgeservice.auth;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -23,4 +23,4 @@ public class UserFeignClientInterceptor implements RequestInterceptor {
             template.header(AUTHORIZATION_HEADER, String.format("%s %s", BEARER_TOKEN_TYPE, details.getTokenValue()));
         }
     }
-}
+}*/

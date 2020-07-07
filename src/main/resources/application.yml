@@ -2,6 +2,13 @@ server:
   port: 8081
 
 spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            clientId: de7daddf92f04ecd0250
+            clientSecret: a2e4ce8b59524d9c2590ed224330d04a1b4a5f1e
   application:
     name: edge-service
   main:
@@ -9,17 +16,10 @@ spring:
 
 
 
-
 zuul:
-
   routes:
-    employees-service: /employees/**
-    301javamicro:
-      path: /employees/**
-      url: http://localhost:8080/employees
-    home:
-      path: /
-      url: http://localhost:8080
+    301javamicro: /employees/**
+
   sensitive-headers: Cookie,Set-Cookie
 
 
@@ -34,13 +34,19 @@ zuul:
 #    resource:
 #      user-info-uri: https://dev-912784.okta.com/oauth2/default/v1/userinfo
 
-  security:
-    oauth2:
-      client:
-        registration:
-          github:
-            clientId: Iv1.31d3980af5014e2a
-            clientSecret: 85c41b20778f181a84a6729cec8dcded74db7766
+
+
+#security:
+#  oauth2:
+#    client:
+#      clientId: Iv1.31d3980af5014e2a
+#      clientSecret: 85c41b20778f181a84a6729cec8dcded74db7766
+#      accessTokenUri: https://github.com/login/oauth/access_token
+#      userAuthorizationUri: https://github.com/login/oauth/authorize
+#      clientAuthenticationScheme: form
+#    resource:
+#      user-info-uri: https://api.github.com/user
+#      prefer-token-info: false
 
 feign:
   hystrix:
