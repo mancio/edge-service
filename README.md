@@ -51,7 +51,10 @@ Just execute ```java -jar {filename}```
 The Dockerfile in the main directory can be executed to build a container
 that run the microservice.
 
-To see all the containers installed locally type
+To see all the images type
+```docker images```
+
+To see all the running containers type
 ```docker ps -a```
 
 To build the container go in the Dockerfile directory and type 
@@ -60,6 +63,9 @@ example ```docker build -t edge:0.1 .```
 
 to execute a container in local type ```docker run -p 8081:8081 ImageName:TagName```
 example ```docker run -p 8081:8081 edge:0.1```
+
+To run all the containers image under the same network
+type ```docker-compose up```
 
 ### Github configuration
 To enable GitHub log in you need to go to [settings](https://github.com/settings/developers)
