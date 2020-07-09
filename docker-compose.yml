@@ -1,22 +1,49 @@
-version: '3'
+version: '2'
+
 services:
   myeureka:
     image: "eureka:0.1"
     ports:
       - "8761:8761"
+    links:
+      - edge
+      - 301micro
     networks:
-      - webnet
+      test:
+        ipv4_address: 10.5.0.5
+
   edge:
     image: "edge:0.1"
     ports:
       - "8081:8081"
+    environment:
+      # Important for clients to register with eureka
+      - eureka.client.serviceUrl.defaultZone=http://10.5.0.5:8761/eureka/
     networks:
-      - webnet
+      test:
+        ipv4_address: 10.5.0.6
+
   301micro:
     image: "301micro:0.1"
     ports:
         - "8080:8080"
+    environment:
+      # Important for clients to register with eureka
+      - eureka.client.serviceUrl.defaultZone=http://10.5.0.5:8761/eureka/
     networks:
-      - webnet
+      test:
+        ipv4_address: 10.5.0.7
+
 networks:
-  webnet:
+  test:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.5.0.0/24
+
+
+
+
+
+

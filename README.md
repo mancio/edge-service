@@ -74,12 +74,18 @@ in your account and create a new OAuth Apps.
 Set as URI ```http://localhost:8081``` and as redirect ```http://localhost:8081/login/oauth2/code/github```
 
 
+### NOTES
 
+The code commented is for okta implementation
 
 ### Links
 * [How to build microservices](https://developer.okta.com/blog/2017/06/15/build-microservices-architecture-spring-boot)
 * [How to implement social auth with okta](https://developer.okta.com/blog/2018/02/13/secure-spring-microservices-with-oauth)
 * [How to implement social auth with okta](https://spring.io/guides/tutorials/spring-boot-oauth2/)
 
- 
+### TODO
+
+* fix eureka discovery (unable to see services in docker)
+* close unauthenticated access to 301MicroService
+
 
