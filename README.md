@@ -82,6 +82,7 @@ The code commented is for okta implementation
 * [How to build microservices](https://developer.okta.com/blog/2017/06/15/build-microservices-architecture-spring-boot)
 * [How to implement social auth with okta](https://developer.okta.com/blog/2018/02/13/secure-spring-microservices-with-oauth)
 * [How to implement social auth with okta](https://spring.io/guides/tutorials/spring-boot-oauth2/)
+* [multi-social log in + jwt](https://www.callicoder.com/spring-boot-security-oauth2-social-login-part-1/)
 
 ### TODO
 
