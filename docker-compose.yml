@@ -34,6 +34,17 @@ services:
       test:
         ipv4_address: 10.5.0.7
 
+  kafkaproducer:
+    image: "kafkaproducer:0.1"
+    ports:
+      - "9000:9000"
+    networks:
+      test:
+        ipv4_address: 10.5.0.8
+
+  kafkaserver:
+    image: "wurstmeister/kafka"
+
 networks:
   test:
     driver: bridge
